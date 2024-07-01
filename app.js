@@ -1,7 +1,7 @@
 const express = require("express");
 const path = require("node:path");
 const app = express();
-const port = 3001;
+const port = 3000 || process.env.port ;
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
@@ -21,5 +21,3 @@ app.get("/register", (req, res) => {
 app.get("/login", (req, res) => {
     res.sendFile(path.resolve(__dirname, './View/login.html'));
 });
-
-
